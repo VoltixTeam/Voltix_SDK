@@ -1,0 +1,30 @@
+        {
+          "name": "Voltix Boards",
+          "architecture": "voltix",
+          "version": "$RELEASE_VERSION",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/VoltixTeam/Voltix_ArduinoCore/issues"
+          },
+          "url": "https://github.com/VoltixTeam/Voltix_SDK/releases/download/v${RELEASE_VERSION}/Voltix_ArduinoCore_v${RELEASE_VERSION}.zip",
+          "archiveFileName": "Voltix_ArduinoCore_v${RELEASE_VERSION}.zip",
+          "checksum": "MD5:${MD5SUM}",
+          "size": "${FILESIZE}",
+          "boards": [
+            {
+              "name": "Voltix Board"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "voltix",
+              "name": "gcc-arm-none-eabi",
+              "version": "12.2.0"
+            },
+            {
+              "packager": "voltix",
+              "name": "openocd",
+              "version": "0.12.0-1"
+            }
+          ]
+        },

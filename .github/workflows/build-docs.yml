@@ -1,0 +1,24 @@
+name: Build docs
+on:
+  workflow_call:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - run: sudo apt update && sudo apt install -y doxygen
+      - run: pip install myst-parser breathe sphinx-rtd-theme renku-sphinx-theme 
+
+      - run: doxygen doxygen.cfg
+      - run: cd docs && TZ=UTC make html
+
+      - name: Upload artifacts to github
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs_html
+          path: docs/_build/html

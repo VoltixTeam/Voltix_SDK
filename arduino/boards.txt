@@ -1,0 +1,67 @@
+# Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+# Copyright (c) 2016 Sandeep Mistry All right reserved.
+# Copyright (c) 2023 Voltix Team. All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# CAUTION: Arduino cashes the board definitions in ~/.config/arduino-ide (Linux).
+# You must delete this directory in order for changes in boards.txt to be applied.
+
+menu.stacksize=Stack Size
+menu.retainedsize=Retained Memory Size
+
+VoltixBoard.name=Voltix Board
+
+VoltixBoard.upload.tool=openocd
+VoltixBoard.upload.protocol=cmsis-dap
+VoltixBoard.upload.target=nrf52
+VoltixBoard.upload.maximum_size=524288
+VoltixBoard.upload.setup_command=transport select swd;
+VoltixBoard.upload.use_1200bps_touch=false
+VoltixBoard.upload.wait_for_upload_port=false
+VoltixBoard.upload.native_usb=false
+
+VoltixBoard.bootloader.tool=openocd
+
+VoltixBoard.build.mcu=cortex-m4
+VoltixBoard.build.f_cpu=64000000
+VoltixBoard.build.board=GENERIC
+VoltixBoard.build.core=Voltix
+VoltixBoard.build.variant=VoltixBoard
+VoltixBoard.build.variant_system_lib=
+VoltixBoard.build.extra_flags=-DNRF52833_XXAA
+VoltixBoard.build.float_flags=-mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16
+VoltixBoard.build.ldscript={build.core.path}/external/linker.ld
+VoltixBoard.build.openocdscript=openocd_scripts/voltix_board.cfg
+VoltixBoard.build.stacksize=1024
+VoltixBoard.build.retainedsize=8192
+
+VoltixBoard.menu.stacksize.512=512B
+VoltixBoard.menu.stacksize.512.build.stacksize=512
+VoltixBoard.menu.stacksize.1024=1kB
+VoltixBoard.menu.stacksize.1024.build.stacksize=1024
+VoltixBoard.menu.stacksize.2048=2kB
+VoltixBoard.menu.stacksize.2048.build.stacksize=2048
+VoltixBoard.menu.stacksize.2048=4kB
+VoltixBoard.menu.stacksize.2048.build.stacksize=4096
+
+VoltixBoard.menu.retainedsize.8192=8kB
+VoltixBoard.menu.retainedsize.8192.build.retainedsize=8192
+VoltixBoard.menu.retainedsize.16384=16kB
+VoltixBoard.menu.retainedsize.16384.build.retainedsize=16384
+VoltixBoard.menu.retainedsize.32768=32kB
+VoltixBoard.menu.retainedsize.32768.build.retainedsize=32768
+VoltixBoard.menu.retainedsize.65536=64kB
+VoltixBoard.menu.retainedsize.65536.build.retainedsize=65536
